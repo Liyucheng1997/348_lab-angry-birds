@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>愤怒的小鸟</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div id="menu" class="screen">
+    <div class="logo">
+      <div class="logo-en">ANGRY BIRDS</div>
+      <div class="logo-cn">愤怒的小鸟</div>
+    </div>
+    <button class="btn big" id="btnPlay">开始游戏</button>
+    <div class="row">
+      <button class="btn round btnSound" title="音效"><span class="ico">♪</span></button>
+      <button class="btn round btnMusic" title="音乐"><span class="ico">♫</span></button>
+    </div>
+    <div class="hint">拖拽小鸟发射 · 飞行中点击释放技能 · 滚轮缩放 · 拖动画面平移</div>
+  </div>
+
+  <div id="levels" class="screen hidden">
+    <h2>选择关卡 <span id="totalStars"></span></h2>
+    <div id="levelGrid"></div>
+    <button class="btn" id="btnBack">返回</button>
+  </div>
+
+  <div id="hud" class="hidden">
+    <div class="hud-left">
+      <button class="btn round" id="btnPause" title="暂停 (Esc)"><span class="ico">❚❚</span></button>
+      <button class="btn round" id="btnRestart" title="重来 (R)"><span class="ico">↻</span></button>
+    </div>
+    <div class="hud-center">
+      <div id="lvName"></div>
+      <div id="birdHint"></div>
+      <div id="birdsLeft"></div>
+    </div>
+    <div class="hud-right">
+      <div id="score">0</div>
+      <div id="best"></div>
+    </div>
+  </div>
+  <div id="tip" class="hidden"></div>
+
+  <div id="pause" class="overlay hidden">
+    <div class="panel">
+      <h2>暂停</h2>
+      <button class="btn" id="btnResume">继续游戏</button>
+      <button class="btn" id="btnPRestart">重新开始</button>
+      <button class="btn" id="btnPLevels">选择关卡</button>
+      <div class="row">
+        <button class="btn round btnSound" title="音效"><span class="ico">♪</span></button>
+        <button class="btn round btnMusic" title="音乐"><span class="ico">♫</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="result" class="overlay hidden">
+    <div class="panel">
+      <h2 id="resTitle"></h2>
+      <div class="stars"><span class="star"></span><span class="star big"></span><span class="star"></span></div>
+      <div class="label">得分</div>
+      <div id="resScore"></div>
+      <div id="resBest"></div>
+      <div class="row">
+        <button class="btn round" id="btnRLevels" title="关卡"><span class="ico">☰</span></button>
+        <button class="btn round" id="btnRRetry" title="重来"><span class="ico">↻</span></button>
+        <button class="btn round go" id="btnNext" title="下一关"><span class="ico">▶</span></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="lib/planck.min.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/art.js"></script>
+  <script src="js/levels.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
